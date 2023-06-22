@@ -10,8 +10,14 @@
 }
 
 .cell {
+  border: 0;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
+}
+
+.cell:hover {
+  background-color: #eee;
 }

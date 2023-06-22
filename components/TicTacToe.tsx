@@ -4,11 +4,11 @@ export const TicTacToe = () => {
   const grid = "123456789";
   if (!grid) return null;
   return (
-    <div className={styles.board}>
+    <div className={styles.board} role="layout">
       {grid.split("").map((cell, index) => (
-        <div className={styles.cell} key={index}>
+        <button className={styles.cell} key={index}>
           {cell}
-        </div>
+        </button>
       ))}
     </div>
   );
