@@ -1,3 +1,4 @@
+import "normalize.css/normalize.css";
 import "./globals.css";
 import { Orbitron } from "next/font/google";
 
