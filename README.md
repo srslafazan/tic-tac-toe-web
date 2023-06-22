@@ -2,6 +2,8 @@
 
 A web client for Tic Tac Toe.
 
+[![Tests](https://github.com/srslafazan/tic-tac-toe-web/actions/workflows/tests.yml/badge.svg)](https://github.com/srslafazan/tic-tac-toe-web/actions/workflows/tests.yml)
+
 > This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 

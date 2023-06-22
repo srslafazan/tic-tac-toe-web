@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - app/**
-      - .github/workflows/tests.yml
+      - "!README.md"
+      - "!LICENSE"
 
 jobs:
   build:
