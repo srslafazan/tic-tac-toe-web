@@ -24,6 +24,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 pnpm test:unit:watch
 ```
 
+```bash
+pnpm exec playwright test --ui
+```
+
 ## Build
 
 ```bash
