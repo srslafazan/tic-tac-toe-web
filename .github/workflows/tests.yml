@@ -40,8 +40,5 @@ jobs:
       - name: Build
         run: pnpm build
 
-      # - name: Export Static Files
-      #   run: pnpm export
-
       - name: Test
         run: pnpm test:unit
