@@ -10,15 +10,15 @@ export const cellsAreEmpty = async (page: Page): Promise<any> => {
   const cells = page.getByTestId("cell");
   sleep(1000);
   return await Promise.all([
-    expect(cells.nth(0)).toBeEmpty({ timeout: 10000 }),
-    expect(cells.nth(1)).toBeEmpty({ timeout: 10000 }),
-    expect(cells.nth(2)).toBeEmpty({ timeout: 10000 }),
-    expect(cells.nth(3)).toBeEmpty({ timeout: 10000 }),
-    expect(cells.nth(4)).toBeEmpty({ timeout: 10000 }),
-    expect(cells.nth(5)).toBeEmpty({ timeout: 10000 }),
-    expect(cells.nth(6)).toBeEmpty({ timeout: 10000 }),
-    expect(cells.nth(7)).toBeEmpty({ timeout: 10000 }),
-    expect(cells.nth(8)).toBeEmpty({ timeout: 10000 }),
+    expect(cells.nth(0)).toBeEmpty(),
+    expect(cells.nth(1)).toBeEmpty(),
+    expect(cells.nth(2)).toBeEmpty(),
+    expect(cells.nth(3)).toBeEmpty(),
+    expect(cells.nth(4)).toBeEmpty(),
+    expect(cells.nth(5)).toBeEmpty(),
+    expect(cells.nth(6)).toBeEmpty(),
+    expect(cells.nth(7)).toBeEmpty(),
+    expect(cells.nth(8)).toBeEmpty(),
   ]);
 };
 
