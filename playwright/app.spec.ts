@@ -17,10 +17,16 @@ test("default state", async ({ page }) => {
 });
 
 test("human can play human", async ({ page }) => {
-  selectOpponent(page, 0, "Human");
-  moveAndVerify(page, 0, "X", "O's turn");
-  moveAndVerify(page, 1, "O", "X's turn");
-  moveAndVerify(page, 3, "X", "O's turn");
-  moveAndVerify(page, 4, "O", "X's turn");
-  moveAndVerify(page, 6, "X", "X' wins!");
+  await selectOpponent(page, 0, "Human");
+  await moveAndVerify(page, 0, "X", "O's turn");
+  await moveAndVerify(page, 2, "O", "X's turn");
+  await moveAndVerify(page, 3, "X", "O's turn");
+  await moveAndVerify(page, 4, "O", "X's turn");
+  await moveAndVerify(page, 6, "X", "X wins!");
 });
+
+test.skip("human can play random computer", async ({ page }) => {});
+test.skip("human can play minimax computer", async ({ page }) => {});
+test.skip("random computer can play random computer", async ({ page }) => {});
+test.skip("random computer can play minimax computer", async ({ page }) => {});
+test.skip("minimax computer can play minimax computer", async ({ page }) => {});

@@ -1,7 +1,5 @@
 import { test, expect, Page, Locator } from "@playwright/test";
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export const getOpponentType = (page: Page): Locator =>
   page.getByTestId("opponent").locator("span").last();
 
@@ -30,7 +28,6 @@ export const selectOpponent = async (
     .locator("li")
     .nth(index)
     .locator("button");
-  await sleep(1000);
   await button.click();
   expect(getOpponentType(page)).toHaveText(type);
 };
@@ -41,10 +38,10 @@ export const moveAndVerify = async (
   player: string,
   expectedIndicator: string
 ): Promise<void> => {
-  const cells = page.locator("data-test-id=cell");
-  const gameStatusIndicator = page.getByTestId("game-status-indicator");
+  const cells = await page.locator("data-test-id=cell");
+  const gameStatusIndicator = await page.getByTestId("game-status-indicator");
   expect(gameStatusIndicator).toHaveText(`${player}'s turn`);
   await cells.nth(index).click();
   await expect(await cells.nth(index).textContent()).toBe(player);
-  expect(gameStatusIndicator).toHaveText(expectedIndicator);
+  await expect(gameStatusIndicator).toHaveText(expectedIndicator);
 };
