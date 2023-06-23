@@ -9,11 +9,40 @@ const createJestConfig = nextJest({
 /** @type {import('jest').Config} */
 const config = {
   // Add more setup options before each test is run
-  // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
 
   testEnvironment: "jest-environment-jsdom",
 
-  setupFilesAfterEnv: ["<rootDir>/support/setupTests.js"],
+  setupFilesAfterEnv: ["<rootDir>/jest/setup.js"],
+  testPathIgnorePatterns: [
+    "<rootDir>/node_modules/",
+    "<rootDir>/.next/",
+    "<rootDir>/playwright-report/",
+    "<rootDir>/test-results/",
+    "<rootDir>/out/",
+    "<rootDir>/coverage/",
+    "<rootDir>/playwright/",
+  ],
+
+  collectCoverage: true,
+  collectCoverageFrom: [
+    "<rootDir>/pages/**/*.{js,jsx,ts,tsx}",
+    "<rootDir>/components/**/*.{js,jsx,ts,tsx}",
+    "<rootDir>/hooks/**/*.{js,jsx,ts,tsx}",
+    "!<rootDir>/**/*.spec.{js,jsx,ts,tsx}",
+    "!<rootDir>/**/*.test.{js,jsx,ts,tsx}",
+  ],
+  coverageDirectory: "jest-coverage",
+
+  reporters: [
+    "default",
+    [
+      "jest-junit",
+      {
+        outputDirectory: "jest-reports",
+        outputName: "jest-junit.xml",
+      },
+    ],
+  ],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

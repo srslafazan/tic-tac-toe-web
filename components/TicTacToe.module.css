@@ -1,5 +1,4 @@
 .board {
-  font-size: 50px;
   height: 400px;
   width: 400px;
   display: inline-grid;
@@ -9,7 +8,16 @@
   background-color: black;
 }
 
+@media (max-width: 600px) {
+  .board {
+    height: 80vw;
+    width: 80vw;
+  }
+}
+
 .cell {
+  font-size: 50px;
+  line-height: 0;
   border: 0;
   cursor: pointer;
   display: flex;
@@ -20,4 +28,24 @@
 
 .cell:hover {
   background-color: #eee;
+}
+
+@media (prefers-color-scheme: dark) {
+  .board {
+    background-color: white;
+  }
+  .cell {
+    background-color: black;
+  }
+  .cell:hover {
+    background-color: #222;
+  }
+}
+
+.opponentSelect {
+  cursor: pointer;
+}
+
+.verticalSpace {
+  margin: 10px 0;
 }

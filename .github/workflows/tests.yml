@@ -2,8 +2,7 @@ name: Tests
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main, e2e ]
     paths-ignore:
       - "README.md"
       - "LICENSE"
@@ -28,17 +27,49 @@ jobs:
           key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-
-
       - name: Install dependencies
         run: |
           npm install -g pnpm
           pnpm install
-
       - name: Lint
         run: pnpm lint
 
       - name: Build
         run: pnpm build
 
-      - name: Test
+      - name: Unit Test
         run: pnpm test:unit
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: jest-coverage
+          path: jest-coverage/
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: jest-reports
+          path: jest-reports/
+          retention-days: 30
+
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: pnpm exec playwright test
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-results
+          path: playwright-results/
+          retention-days: 30
