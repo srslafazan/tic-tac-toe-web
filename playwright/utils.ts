@@ -1,5 +1,7 @@
 import { test, expect, Page, Locator } from "@playwright/test";
 
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export const getOpponentType = (page: Page): Locator =>
   page.getByTestId("opponent").locator("span").last();
 
@@ -23,8 +25,13 @@ export const selectOpponent = async (
   index: number,
   type: string
 ): Promise<void> => {
-  const opponentSelect = page.getByTestId("opponent-select");
-  await opponentSelect.locator("li").nth(index).locator("button").click();
+  const opponentSelect = await page.getByTestId("opponent-select");
+  const button = await opponentSelect
+    .locator("li")
+    .nth(index)
+    .locator("button");
+  await sleep(1000);
+  await button.click();
   expect(getOpponentType(page)).toHaveText(type);
 };
 
