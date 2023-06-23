@@ -20,14 +20,13 @@ const config = {
     "<rootDir>/test-results/",
     "<rootDir>/out/",
     "<rootDir>/coverage/",
-    "<rootDir>/playwright/",
+    "<rootDir>/playwright/*",
   ],
 
   collectCoverage: true,
   collectCoverageFrom: [
     "<rootDir>/pages/**/*.{js,jsx,ts,tsx}",
     "<rootDir>/components/**/*.{js,jsx,ts,tsx}",
-    "<rootDir>/hooks/**/*.{js,jsx,ts,tsx}",
     "!<rootDir>/**/*.spec.{js,jsx,ts,tsx}",
     "!<rootDir>/**/*.test.{js,jsx,ts,tsx}",
   ],
