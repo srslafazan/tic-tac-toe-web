@@ -15,13 +15,11 @@
     "clean": "rm -rf .next jest-coverage jest-reports node_modules out playwright-reports playwright-results test-results"
   },
   "dependencies": {
-    "@types/http-proxy": "^1.17.11",
     "@types/node": "20.3.1",
     "@types/react": "18.2.13",
     "@types/react-dom": "18.2.6",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
-    "http-proxy": "^1.18.1",
     "next": "13.4.7",
     "normalize.css": "^8.0.1",
     "react": "18.2.0",
