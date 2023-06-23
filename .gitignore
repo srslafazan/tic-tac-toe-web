@@ -10,7 +10,7 @@
 /jest-coverage
 /jest-reports
 /playwright-report/
-/playwright-results/
+/e2e-results/
 /playwright/.cache/
 
 # next.js

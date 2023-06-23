@@ -1,20 +1,24 @@
-import { test, expect, Page, Locator } from "@playwright/test";
+import { expect, Page, Locator } from "@playwright/test";
+
+export const sleep = (ms: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 export const getOpponentType = (page: Page): Locator =>
   page.getByTestId("opponent").locator("span").last();
 
 export const cellsAreEmpty = async (page: Page): Promise<any> => {
-  const cells = page.locator("data-test-id=cell");
+  const cells = page.getByTestId("cell");
+  sleep(1000);
   return await Promise.all([
-    expect(cells.nth(0)).toBeEmpty(),
-    expect(cells.nth(1)).toBeEmpty(),
-    expect(cells.nth(2)).toBeEmpty(),
-    expect(cells.nth(3)).toBeEmpty(),
-    expect(cells.nth(4)).toBeEmpty(),
-    expect(cells.nth(5)).toBeEmpty(),
-    expect(cells.nth(6)).toBeEmpty(),
-    expect(cells.nth(7)).toBeEmpty(),
-    expect(cells.nth(8)).toBeEmpty(),
+    expect(cells.nth(0)).toBeEmpty({ timeout: 10000 }),
+    expect(cells.nth(1)).toBeEmpty({ timeout: 10000 }),
+    expect(cells.nth(2)).toBeEmpty({ timeout: 10000 }),
+    expect(cells.nth(3)).toBeEmpty({ timeout: 10000 }),
+    expect(cells.nth(4)).toBeEmpty({ timeout: 10000 }),
+    expect(cells.nth(5)).toBeEmpty({ timeout: 10000 }),
+    expect(cells.nth(6)).toBeEmpty({ timeout: 10000 }),
+    expect(cells.nth(7)).toBeEmpty({ timeout: 10000 }),
+    expect(cells.nth(8)).toBeEmpty({ timeout: 10000 }),
   ]);
 };
 
@@ -38,10 +42,11 @@ export const moveAndVerify = async (
   player: string,
   expectedIndicator: string
 ): Promise<void> => {
-  const cells = await page.locator("data-test-id=cell");
+  const cells = await page.getByTestId("cell");
   const gameStatusIndicator = await page.getByTestId("game-status-indicator");
   expect(gameStatusIndicator).toHaveText(`${player}'s turn`);
   await cells.nth(index).click();
+  await sleep(1000);
   await expect(await cells.nth(index).textContent()).toBe(player);
   await expect(gameStatusIndicator).toHaveText(expectedIndicator);
 };

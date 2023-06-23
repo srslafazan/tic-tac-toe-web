@@ -58,6 +58,9 @@ devDependencies:
   '@types/testing-library__jest-dom':
     specifier: ^5.14.6
     version: 5.14.6
+  dotenv:
+    specifier: ^16.3.1
+    version: 16.3.1
   jest:
     specifier: ^29.5.0
     version: 29.5.0(@types/node@20.3.1)
@@ -1865,6 +1868,11 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       webidl-conversions: 7.0.0
+    dev: true
+
+  /dotenv@16.3.1:
+    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /eastasianwidth@0.2.0:

@@ -70,6 +70,6 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: playwright-results
-          path: playwright-results/
+          name: e2e-results
+          path: e2e-results/
           retention-days: 30

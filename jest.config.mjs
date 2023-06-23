@@ -21,12 +21,14 @@ const config = {
     "<rootDir>/out/",
     "<rootDir>/coverage/",
     "<rootDir>/playwright/*",
+    "<rootDir>/e2e/*",
   ],
 
   collectCoverage: true,
   collectCoverageFrom: [
     "<rootDir>/pages/**/*.{js,jsx,ts,tsx}",
     "<rootDir>/components/**/*.{js,jsx,ts,tsx}",
+    "<rootDir>/lib/**/*.{js,jsx,ts,tsx}",
     "!<rootDir>/**/*.spec.{js,jsx,ts,tsx}",
     "!<rootDir>/**/*.test.{js,jsx,ts,tsx}",
   ],
