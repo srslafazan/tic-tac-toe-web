@@ -2,7 +2,7 @@ name: Tests
 
 on:
   push:
-    branches: [ main, e2e ]
+    branches: [ main ]
     paths-ignore:
       - "README.md"
       - "LICENSE"
