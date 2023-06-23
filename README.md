@@ -7,18 +7,33 @@ A web client for Tic Tac Toe.
 > This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 
+## Requirements
+
+- Node 20.3.1
+
+> This project is configured to run on osx.
+
 ## Getting Started
 
-First, run the development server:
+This project uses:
+
+-  `pnpm` (package manager)
+-  `next` (framework)
+-  `jest` (unit testing)
+-  `playwright` (e2e testing)
+
+### Run
+
+To run the development server:
 
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The project runs on [http://localhost:3000](http://localhost:3000) by default.
 
 
-## Tests
+## Tests (development)
 
 ```bash
 pnpm test:unit:watch
