@@ -1,4 +1,3 @@
-import { render, screen } from "@testing-library/react";
 import { getInitialGameState } from "./index";
 import "@testing-library/jest-dom";
 
