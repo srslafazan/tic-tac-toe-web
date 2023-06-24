@@ -67,7 +67,6 @@ export const TicTacToe = ({ cells = "         " }) => {
   );
 
   const isOpponentActive = (v: Player) => opponent === v;
-  console.log(opponent, Object.entries(Player));
 
   return (
     <div>
