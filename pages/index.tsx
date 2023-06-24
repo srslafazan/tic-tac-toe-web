@@ -7,6 +7,13 @@ export default function Home() {
     <main className={styles.main}>
       <h1>Tic Tac Woah</h1>
       <TicTacToe />
+      <span className={styles.copywright}>
+        &gt;{" "}
+        <a href="https://www.shainlafazan.com" target="_blank">
+          Shain Lafazan
+        </a>{" "}
+        © 2023
+      </span>
     </main>
   );
 }

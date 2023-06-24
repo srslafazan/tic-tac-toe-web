@@ -6,3 +6,15 @@
   align-items: center;
   justify-content: center;
 }
+
+.copywright {
+  font-size: 14px;
+  color: #000;
+  margin: 20px auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .copywright {
+    color: #fff;
+  }
+}
