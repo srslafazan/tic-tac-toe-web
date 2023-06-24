@@ -13,7 +13,7 @@ describe("TicTacToe", () => {
     expect(cells.map((cell) => cell.textContent).join("")).toEqual("         ");
     const opponent = screen.getByTestId("opponent");
     expect(opponent.textContent).toEqual(
-      "Playing against: RandomHumanRandomMinimax"
+      "HumanRandomMinimaxPlaying AgainstRandom"
     );
     const opponentSelect = screen.getByTestId("opponent-select");
     expect(opponentSelect.textContent).toEqual("HumanRandomMinimax");
