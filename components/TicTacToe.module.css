@@ -8,13 +8,6 @@
   background-color: black;
 }
 
-@media (max-width: 600px) {
-  .board {
-    height: 80vw;
-    width: 80vw;
-  }
-}
-
 .cell {
   font-size: 50px;
   line-height: 0;
@@ -30,19 +23,6 @@
 
 .cell:hover {
   background-color: #eee;
-}
-
-@media (prefers-color-scheme: dark) {
-  .board {
-    background-color: white;
-  }
-  .cell {
-    background-color: black;
-    color: white;
-  }
-  .cell:hover {
-    background-color: #222;
-  }
 }
 
 .gameStatusIndicator {
@@ -73,7 +53,6 @@
 .opponentSelectButtonActive {
   background-color: green;
   color: white;
-  border: 1px solid green;
 }
 
 .lower {
@@ -92,15 +71,30 @@
   cursor: pointer;
   color: white;
   background-color: red;
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-radius: 5px;
-  border: 1px solid white;
   text-transform: uppercase;
 }
 
+@media (max-width: 600px) {
+  .board {
+    height: 80vw;
+    width: 80vw;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
+  .board {
+    background-color: white;
+  }
+  .cell {
+    background-color: black;
+    color: white;
+  }
+  .cell:hover {
+    background-color: #222;
+  }
   .reset {
     color: white;
-    background-color: red;
   }
 }
