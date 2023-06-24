@@ -38,6 +38,7 @@
   }
   .cell {
     background-color: black;
+    color: white;
   }
   .cell:hover {
     background-color: #222;
