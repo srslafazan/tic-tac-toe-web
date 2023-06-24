@@ -104,6 +104,9 @@ a {
   html {
     color-scheme: dark;
   }
+  a {
+    color: turquoise;
+  }
 }
 
 button {
