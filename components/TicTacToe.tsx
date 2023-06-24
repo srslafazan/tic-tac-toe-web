@@ -75,7 +75,7 @@ export const TicTacToe = ({ cells = "         " }) => {
           {Object.entries(Player).map(([k, v]) => (
             <li key={k}>
               <button
-                onMouseDown={() => setOpponent(v as Player)}
+                onClick={() => setOpponent(v as Player)}
                 className={`${styles.opponentSelectButton} ${
                   isOpponentActive(v) ? styles.opponentSelectButtonActive : ""
                 }`}
@@ -100,7 +100,7 @@ export const TicTacToe = ({ cells = "         " }) => {
               data-testid="cell"
               className={styles.cell}
               key={index}
-              onMouseDown={() => updateGame(index)}
+              onClick={() => updateGame(index)}
             >
               {cell}
             </button>
@@ -110,7 +110,7 @@ export const TicTacToe = ({ cells = "         " }) => {
         {gameStatusIndicator}
         <button
           data-testid="reset"
-          onMouseDown={() => setGame(getInitialGameState())}
+          onClick={() => setGame(getInitialGameState())}
           className={styles.reset}
         >
           Reset
