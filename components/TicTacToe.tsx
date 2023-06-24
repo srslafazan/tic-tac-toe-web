@@ -53,33 +53,43 @@ export const TicTacToe = ({ cells = "         " }) => {
 
   if (!game) return <p>No game</p>;
 
+  const gameStatusIndicator = (
+    <div
+      data-testid="game-status-indicator"
+      className={styles.gameStatusIndicator}
+    >
+      {game.after_state.game_over &&
+        game.after_state.winner &&
+        `${game.after_state.winner} wins!`}
+      {game.after_state.game_over && game.after_state.tie && `Cat's Game!`}
+      {!game.after_state.game_over && `${game.after_state.current_mark}'s turn`}
+    </div>
+  );
+
+  const isOpponentActive = (v: Player) => opponent === v;
+  console.log(opponent, Object.entries(Player));
+
   return (
     <div>
-      <div data-testid="opponent" className={styles.verticalSpace}>
-        <span>Playing against: </span>
-        <span style={{ fontWeight: "bold" }}>
-          {opponent[0].toUpperCase() + opponent.slice(1)}
-        </span>
-        <ol data-testid="opponent-select">
+      <div data-testid="opponent" className={styles.opponent}>
+        <ol data-testid="opponent-select" className={styles.opponentSelect}>
           {Object.entries(Player).map(([k, v]) => (
             <li key={k}>
               <button
                 onClick={() => setOpponent(v as Player)}
-                className={styles.opponentSelect}
+                className={`${styles.opponentSelectButton} ${
+                  isOpponentActive(v) ? styles.opponentSelectButtonActive : ""
+                }`}
               >
                 {k}
               </button>
             </li>
           ))}
         </ol>
-      </div>
-      <div data-testid="game-status-indicator" className={styles.verticalSpace}>
-        {game.after_state.game_over &&
-          game.after_state.winner &&
-          `${game.after_state.winner} wins!`}
-        {game.after_state.game_over && game.after_state.tie && `Cat's Game!`}
-        {!game.after_state.game_over &&
-          `${game.after_state.current_mark}'s turn`}
+        <span>Playing against: </span>
+        <span style={{ fontWeight: "bold", marginTop: "10px" }}>
+          {opponent[0].toUpperCase() + opponent.slice(1)}
+        </span>
       </div>
       <div className={styles.board} data-testid="board">
         {game.after_state.grid.cells
@@ -95,10 +105,12 @@ export const TicTacToe = ({ cells = "         " }) => {
             </button>
           ))}
       </div>
-      <div>
+      <div className={styles.lower}>
+        {gameStatusIndicator}
         <button
           data-testid="reset"
           onClick={() => setGame(getInitialGameState())}
+          className={styles.reset}
         >
           Reset
         </button>

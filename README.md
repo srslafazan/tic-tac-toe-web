@@ -9,7 +9,7 @@ A web client for Tic Tac Toe.
 
 ## Requirements
 
-- Node 20.3.1
+- Node 18.16.1
 
 > This project is configured to run on osx.
 

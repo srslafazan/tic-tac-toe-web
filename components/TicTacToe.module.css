@@ -24,6 +24,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(255, 255, 255);
+  border-radius: 0;
 }
 
 .cell:hover {
@@ -42,10 +43,62 @@
   }
 }
 
-.opponentSelect {
-  cursor: pointer;
+.gameStatusIndicator {
+  margin: 40px auto 20px auto;
+  text-align: center;
 }
 
-.verticalSpace {
-  margin: 10px 0;
+.opponent {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.opponentSelect {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  list-style: none;
+}
+
+.opponentSelectButton {
+  cursor: pointer;
+  margin: 0 2px;
+}
+
+.opponentSelectButtonActive {
+  background-color: green;
+  color: white;
+  border: 1px solid green;
+}
+
+.lower {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset {
+  letter-spacing: 2px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 20px auto;
+  cursor: pointer;
+  color: white;
+  background-color: red;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+  text-transform: uppercase;
+}
+
+@media (prefers-color-scheme: dark) {
+  .reset {
+    color: white;
+    background-color: red;
+  }
 }
