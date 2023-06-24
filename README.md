@@ -11,7 +11,7 @@ A web client for Tic Tac Toe.
 <p align="center">
   <img src="https://github.com/srslafazan/tic-tac-toe-web/assets/11346004/e3938350-abcc-4e2e-b352-8d7627531093" align="left">
   <img src="https://github.com/srslafazan/tic-tac-toe-web/assets/11346004/f19e745a-4764-49ed-b151-c12072a365b3">
-  <img src="https://github.com/srslafazan/tic-tac-toe-web/assets/11346004/ded6f46b-adde-4275-84ee-600fff89a95d" align="right">
+  <img src="https://github.com/srslafazan/tic-tac-toe-web/assets/11346004/ded6f46b-adde-4275-84ee-600fff89a95d">
 </p>
 
 ## Requirements
