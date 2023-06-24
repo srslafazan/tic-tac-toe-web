@@ -13,8 +13,16 @@
   margin: 20px auto;
 }
 
+.version {
+  font-size: 10px;
+  color: #000;
+}
+
 @media (prefers-color-scheme: dark) {
   .copywright {
+    color: #fff;
+  }
+  .version {
     color: #fff;
   }
 }

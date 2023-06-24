@@ -44,3 +44,12 @@ export const getGame = async (body: GetGameParams): Promise<any> =>
   })
     .then((result) => result.json())
     .catch((error) => console.log("error", error));
+
+export type APIVersion = {
+  version: string;
+};
+
+export const getApiVersion = async (): Promise<APIVersion> =>
+  fetch(`${process.env.NEXT_PUBLIC_TIC_TAC_TOE_API_URL}/version`)
+    .then((result) => result.json())
+    .catch((error) => console.log("error", error));
