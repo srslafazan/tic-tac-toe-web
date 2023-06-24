@@ -85,8 +85,10 @@ export const TicTacToe = ({ cells = "         " }) => {
             </li>
           ))}
         </ol>
-        <span>Playing against: </span>
-        <span style={{ fontWeight: "bold", marginTop: "10px" }}>
+        <span>Playing Against</span>
+        <span
+          style={{ fontWeight: "bold", marginTop: "10px", fontSize: "20px" }}
+        >
           {opponent[0].toUpperCase() + opponent.slice(1)}
         </span>
       </div>
