@@ -7,10 +7,9 @@
   justify-content: center;
 }
 
-.copywright {
-  font-size: 14px;
-  color: #000;
-  margin: 20px auto;
+.docsLink {
+  font-size: 10px;
+  margin-top: 10px;
 }
 
 .version {
@@ -18,11 +17,17 @@
   color: #000;
 }
 
+.copywright {
+  font-size: 14px;
+  color: #000;
+  margin: 20px auto;
+}
+
 @media (prefers-color-scheme: dark) {
-  .copywright {
+  .version {
     color: #fff;
   }
-  .version {
+  .copywright {
     color: #fff;
   }
 }

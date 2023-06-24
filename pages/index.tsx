@@ -19,6 +19,13 @@ export default function Home() {
       <TicTacToe />
       <span className={styles.version}>ui version {pkg.version}</span>
       <span className={styles.version}>api version {apiVersion}</span>
+      <a
+        className={styles.docsLink}
+        href="https://tic-tac-toe-backend-nksq.onrender.com/docs"
+        target="_blank"
+      >
+        API Docs
+      </a>
       <span className={styles.copywright}>
         &gt;{" "}
         <a href="https://www.shainlafazan.com" target="_blank">
