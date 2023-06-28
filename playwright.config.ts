@@ -24,7 +24,7 @@ export default defineConfig({
   reporter: [
     ["list"],
     ["html"],
-    ["json", { outputFolder: "e2e-results", outputFile: "test-results.json" }],
+    ["json", { outputFile: "e2e-results/playwright-results.json" }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
