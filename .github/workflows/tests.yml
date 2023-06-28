@@ -2,7 +2,7 @@ name: Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "*" ]
     paths-ignore:
       - "README.md"
       - "LICENSE"
@@ -42,39 +42,40 @@ jobs:
       - name: Unit Test
         run: pnpm test:unit
 
-      - name: Upload jest coverage report
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: jest-coverage
-          path: jest-coverage/
-          retention-days: 30
-
-      - name: Upload jest unit test reports
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: jest-reports
-          path: jest-reports/
-          retention-days: 30
-
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
 
       - name: Run Playwright tests
         run: pnpm exec playwright test
 
-      - name: Upload playwright e2e report
+      - name: Upload jest coverage report
+        if: branch == 'main'
         uses: actions/upload-artifact@v3
-        if: always()
+        with:
+          name: jest-coverage
+          path: jest-coverage/
+          retention-days: 30
+
+      - name: Upload jest unit test reports
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v3
+        with:
+          name: jest-reports
+          path: jest-reports/
+          retention-days: 30
+
+
+      - name: Upload playwright e2e report
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v3
         with:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
 
       - name: Upload playwright e2e results
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@v3
-        if: always()
         with:
           name: e2e-results
           path: e2e-results/
