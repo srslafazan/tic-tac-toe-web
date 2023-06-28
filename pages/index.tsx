@@ -21,7 +21,7 @@ export default function Home() {
       <span className={styles.version}>api version {apiVersion}</span>
       <a
         className={styles.docsLink}
-        href="https://tic-tac-toe-backend-nksq.onrender.com/docs"
+        href="https://tic-tac-toe-backends.fly.dev/docs"
         target="_blank"
       >
         API Docs
